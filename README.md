@@ -1,4 +1,4 @@
-# 🧠 Review Understanding Pipeline
+# 🧠 Text Quantization,NER,Standardization Pipeline
 
 This repository implements a multi-step NLP pipeline for understanding and structuring customer reviews. The goal is to move from **raw text** to **structured insights** through sentiment analysis, keyphrase extraction, and label standardization.
 The entire workflow is carried out using Qwen3 LLM via Ollama, enabling tool call, ensuring structured output at the end. 
@@ -50,3 +50,68 @@ A **structured JSON** representation of the review, including:
 }
 ```
 
+## 📋 Pipeline Flow
+
+```mermaid
+flowchart TD
+    A[Start] --> B[Receive Review Input]
+    B --> C[Ollama Tool Call: Quantification & NER]
+    C --> Pos[Positive Points]
+    C --> Neg[Pain Points]
+
+    Pos --> PosDishes[Positive Dishes]
+    Pos --> PosOther[Other Positive Points]
+    Neg --> NegDishes[Negative Dishes]
+    Neg --> NegOther[Other Negative Points]
+
+    PosOther --> CollectPos[Collect All Positive Points]
+    NegOther --> CollectNeg[Collect All Negative Points]
+
+    CollectPos --> SPos[Ollama Tool Call: Label Standardization - Positive]
+    CollectNeg --> SNeg[Ollama Tool Call: Label Standardization - Negative]
+
+    SPos --> StdPos[Standardized Positive Points]
+    StdPos --> MapPos[Reduced/Standarized Positive Points]
+    CollectPos --> MapPos
+    MapPos --> CatPos[Categorized Positive Points]
+
+    SNeg --> StdNeg[Standardized Negative Points]
+    StdNeg --> MapNeg[Reduced/Standarized Negative Points]
+    CollectNeg --> MapNeg
+    MapNeg --> CatNeg[Categorized Negative Points]
+
+    %% Dotted box: NER phase
+    subgraph NER [ Named Entity Recognition ]
+        style NER stroke-dasharray: 5
+        Pos
+        Neg
+        PosDishes
+        PosOther
+        NegDishes
+        NegOther
+    end
+
+    %% Encircle Standardization & Categorization process
+    subgraph Standardization [ Point Standardization & Categorization ]
+        style Standardization stroke: #999,stroke-width:2px
+        PosOther
+        NegOther
+        CollectPos
+        CollectNeg
+        SPos
+        SNeg
+        StdPos
+        StdNeg
+        MapPos
+        MapNeg
+        CatPos
+        CatNeg
+    end
+
+    %% Apply class to important nodes
+    class C,SPos,SNeg highlight;
+
+    %% Define highlight class with dark grey background and white text
+    classDef highlight fill:#333,stroke:#fff,stroke-width:2px,color:#fff,font-weight:bold;
+
+```
