@@ -13,11 +13,3 @@ flowchart TD
     E --> I[Return result and response]
     H --> I
 ```
-
-```mermaid
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
-```
