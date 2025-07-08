@@ -1,7 +1,8 @@
 # 🧠 Text Quantization,NER,Standardization Pipeline
 
-This repository implements a multi-step NLP pipeline for understanding and structuring customer reviews. The goal is to move from **raw text** to **structured insights** through sentiment analysis, keyphrase extraction, and label standardization.
-The entire workflow is carried out using Qwen3 LLM via Ollama, enabling tool call, ensuring structured output at the end. 
+This repository implements a multi-step pipeline for understanding and structuring raw text (reviews, in this case). The goal is to move from **raw text** to **structured insights** through sentiment analysis, keyphrase extraction, and label standardization.
+The entire workflow is carried out using Qwen3 LLM via Ollama, enabling tool call, ensuring structured output at the end.  
+The workflow is implemented on Open Source _"yelp-restaurant-reviews"_ data, but can be extended to convert any raw text to ***quantified*** ***standardized*** ***structured*** output.  
 
 ---
 
