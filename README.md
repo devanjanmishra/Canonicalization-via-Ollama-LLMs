@@ -10,7 +10,7 @@ The workflow is implemented on Open Source _"yelp-restaurant-reviews"_ data, but
 
 The processing pipeline operates in **three main stages**:
 
-### 1️⃣ Basic Sentiment Analysis  
+### 1️⃣ [Basic Sentiment Analysis](./Basic_Sentiment_Analysis/sentiment_quantification.ipynb)
 **Goal**: Rate the entire review on a scale from 0 (very negative) to 5 (very positive).
 
 #### Theoretical Context:
@@ -19,7 +19,7 @@ The processing pipeline operates in **three main stages**:
 
 ---
 
-### 2️⃣ Quantitative Named Entity Recognition (NER)  
+### 2️⃣ [Quantitative Named Entity Recognition (NER)](./Quantitative_Named_Entity_Recognition/Named_Entity_Recogntion_Sentiment.ipynb)
 **Goal**: Extract opinionated phrases like _"slow service"_ or _"great food"_, and identify references to specific entities (e.g., _"ice cream"_, _"burger"_).
 
 #### Theoretical Context:
@@ -30,26 +30,13 @@ The processing pipeline operates in **three main stages**:
 
 ---
 
-### 3️⃣ Standardization / Canonicalization  
+### 3️⃣ [Standardization / Canonicalization](./Standardization_Canonicalization/Standardization_of_Quantified_Results.ipynb)
 **Goal**: Map diverse phrasings (e.g., _"the service was slow"_ vs _"slow service"_) to a single standardized label.
 
 #### Theoretical Context:
 - **Text Normalization / Canonicalization**: Reducing linguistic variance across extracted phrases.
 - **Synonym Resolution / Clustering**: Grouping semantically similar expressions under unified tags.
 
-#### Output:
-A **structured JSON** representation of the review, including:
-```json
-{
-  "rating": 4,
-  "positive_points": ["delicious food", "friendly staff"],
-  "pain_points": ["slow service"],
-  "categories": {
-    "food": ["delicious food"],
-    "service": ["slow service"]
-  }
-}
-```
 
 ## 📋 Pipeline Flow
 
@@ -116,3 +103,18 @@ flowchart TD
     classDef highlight fill:#333,stroke:#fff,stroke-width:2px,color:#fff,font-weight:bold;
 
 ```
+
+## Sample Output:
+A **structured JSON** representation of the review, including:
+```json
+{
+  "rating": 4,
+  "positive_points": ["delicious food", "friendly staff"],
+  "pain_points": ["slow service"],
+  "categories": {
+    "food": ["delicious food"],
+    "service": ["slow service"]
+  }
+}
+```
+![Sample Output ](./sample_word_cloud.jpg)
