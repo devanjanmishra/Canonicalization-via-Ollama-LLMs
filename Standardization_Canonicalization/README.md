@@ -25,12 +25,12 @@ flowchart TD
     CollectNeg --> SNeg[Ollama Tool Call: Label Standardization - Negative]
 
     SPos --> StdPos[Standardized Positive Points]
-    StdPos --> MapPos[Map to All Positive Points]
+    StdPos --> MapPos[Reduced/Standarized Positive Points]
     CollectPos --> MapPos
     MapPos --> CatPos[Categorized Positive Points]
 
     SNeg --> StdNeg[Standardized Negative Points]
-    StdNeg --> MapNeg[Map to All Negative Points]
+    StdNeg --> MapNeg[Reduced/Standarized Negative Points]
     CollectNeg --> MapNeg
     MapNeg --> CatNeg[Categorized Negative Points]
 
