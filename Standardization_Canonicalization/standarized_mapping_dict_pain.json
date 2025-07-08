@@ -1,0 +1,50 @@
+{
+    "Payment Methods Limitations": [
+        "cash only"
+    ],
+    "Parking Difficulty": [
+        "crowded parking"
+    ],
+    "Limited Menu Options": [
+        "disappointing unavailable flavors"
+    ],
+    "Order Accuracy Issues": [
+        "inaccurate orders",
+        "items forgotten"
+    ],
+    "Inattentive Service": [
+        "inattentive service",
+        "lack of customer attention",
+        "poor customer service",
+        "workers not attentive"
+    ],
+    "Long Wait Times": [
+        "long lines",
+        "long wait"
+    ],
+    "Average Food Quality": [
+        "nothing too special"
+    ],
+    "Attention to Detail": [
+        "poor attention to detail"
+    ],
+    "Unpleasant Odors": [
+        "smell of cow dung"
+    ],
+    "Limited Seating": [
+        "limited seating"
+    ],
+    "Packaging Issues": [
+        "no lid provided"
+    ],
+    "Refund Policy Issues": [
+        "no refunds"
+    ],
+    "Staff Behavior Issues": [
+        "rude manager"
+    ],
+    "Service Speed Issues": [
+        "slow boba preparation",
+        "slow service"
+    ]
+}
